@@ -26,13 +26,19 @@ class methodsUI:
             ef_AD.methodsAD.loadFile(ef_UI.ar_users, "users.txt")
 
             if (op == 1):
-                while true:
-                    user = lb.ask_string("Usuario: ")
-                    psw = lb.ask_string("Constraseña: ")
+                while True:
+                    #os.system('cls')
+                    user = lb.ask_string("Usuario: ", 2, 30)
+                    psw = lb.ask_string("Constraseña: ", 5, 15)
                     flag, position = ef_AD.methodsAD.checkUser(user, psw)
 
-                    if position != -1:
+                    if position == -1:
+                        #os.system('cls')
+                        lb.error("Usuario o contraseña incorrectos")
+                    else:
+                        lb.error("WELCOMW!!!!!!!")
                         break
+
             if (op == 2):
                 # Asking for userName
                 while True:

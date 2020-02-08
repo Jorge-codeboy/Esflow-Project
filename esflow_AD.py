@@ -28,7 +28,8 @@ class methodsAD:
         for reg in ef_UI.methodsUI.ar_users:
             if psw != "!":
                 psw = psw + (" "*(15-len(psw)))
-                if user == reg[0:30] and psw == reg[30:46]:
+                # It is to 45 cause otherwiswe 46 takes the \n symbol
+                if user == reg[0:30] and psw == reg[30:45]:
                     bandera_existe = True
                     posicion_arreglo = ef_UI.methodsUI.ar_users.index(reg)
                     break
